@@ -70,7 +70,7 @@ window.addEventListener("touchmove", (e) => {
 
   // Переміщення фігури вліво/вправо
   if (Math.abs(deltaX) > Math.abs(deltaY)) {
-    if (deltaX > 50) {
+    if (deltaX > 10) {
       // Вправо
       lastFigure.position.x += 0.5;
     } else if (deltaX < -30) {
@@ -81,7 +81,7 @@ window.addEventListener("touchmove", (e) => {
 
   // Поворот фігури
   if (Math.abs(deltaY) > Math.abs(deltaX)) {
-    if (deltaY < -50) {
+    if (deltaY < -10) {
       // Вгору (наприклад, для повороту фігури)
       lastFigure.quaternion.z -= 1;
     }
