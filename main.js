@@ -46,6 +46,9 @@ window.addEventListener("keydown", (e) => {
     lastFigure.position.x -= 0.5;
   } else if (e.key === " ") {
     lastFigure.quaternion.z -= 1;
+  }else if (e.key === 's'){
+    lastFigure.position.y -= 1;
+
   }
 });
 
