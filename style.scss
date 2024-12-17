@@ -8,3 +8,17 @@
   left: 0;
   background: #938383;
 }
+.buttons{
+  position: fixed;
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%);
+  gap: 10px;
+  display: flex;
+  
+}
+button{
+  background: #000;
+  padding: 10px;
+border-radius: 50%;
+}

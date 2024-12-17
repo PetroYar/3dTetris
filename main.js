@@ -52,49 +52,21 @@ window.addEventListener("keydown", (e) => {
   }
 });
 
-let touchStartX = 0; // Початкова точка дотику по осі X
-let touchStartY = 0; // Початкова точка дотику по осі Y
-
-window.addEventListener("touchstart", (e) => {
-  const touch = e.touches[0]; // Взяти перший дотик
-  touchStartX = touch.clientX; // Записуємо початкову координату X
-  touchStartY = touch.clientY; // Записуємо початкову координату Y
-});
-
-window.addEventListener("touchmove", (e) => {
-  const touch = e.touches[0]; // Взяти перший дотик
-  const deltaX = touch.clientX - touchStartX; // Різниця між новою та початковою X координатою
-  const deltaY = touch.clientY - touchStartY; // Різниця між новою та початковою Y координатою
-
+document.getElementById("moveLeft").addEventListener("click", () => {
   const lastFigure = figures[figures.length - 1].physics;
-
-  // Переміщення фігури вліво/вправо
-  if (Math.abs(deltaX) > Math.abs(deltaY)) {
-    if (deltaX > 10) {
-      // Вправо
-      lastFigure.position.x += 0.5;
-    } else if (deltaX < -30) {
-      // Вліво
-      lastFigure.position.x -= 0.5;
-    }
-  }
-
-  // Поворот фігури
-  if (Math.abs(deltaY) > Math.abs(deltaX)) {
-    if (deltaY < -10) {
-      // Вгору (наприклад, для повороту фігури)
-      lastFigure.quaternion.z -= 1;
-    }
-  }
-
-  // Оновлюємо початкову точку дотику
-  touchStartX = touch.clientX;
-  touchStartY = touch.clientY;
+  lastFigure.position.x -= 0.5;
 });
 
-window.addEventListener("touchend", () => {
-  // В кінці тач події, можна виконати додаткові дії (якщо необхідно)
+document.getElementById("moveRight").addEventListener("click", () => {
+  const lastFigure = figures[figures.length - 1].physics;
+  lastFigure.position.x += 0.5;
 });
+
+document.getElementById("rotate").addEventListener("click", () => {
+  const lastFigure = figures[figures.length - 1].physics;
+  lastFigure.quaternion.z -= 1;
+});
+
 
 setInterval(() => {
   test();
