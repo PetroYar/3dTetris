@@ -15,7 +15,7 @@ const shapeNames = ["O", "I", "S", "Z", "L", "J", "T"];
 
 const camera = createCamera();
 const { world, addPhysicsToFigure } = createPhysicsWorld();
-const orbit = new OrbitControls(camera, canvas);
+// const orbit = new OrbitControls(camera, canvas);
 
 const { scene } = createScene();
 const figures = [];
