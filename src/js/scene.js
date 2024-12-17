@@ -26,7 +26,7 @@ export const createScene = (figure) => {
   // });
 
   // light
-  const ambientLight = new THREE.AmbientLight("#fff", 0.4);
+  const ambientLight = new THREE.AmbientLight("#fff", 1);
 
   scene.add(ambientLight);
   // const directionalLight = new THREE.DirectionalLight(0xffffff, 1); // Колір і інтенсивність
