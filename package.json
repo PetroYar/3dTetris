@@ -1,0 +1,21 @@
+{
+  "name": "blackfriday",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "vite": "^6.0.3"
+  },
+  "dependencies": {
+    "cannon-es": "^0.20.0",
+    "dat.gui": "^0.7.9",
+    "gsap": "^3.12.5",
+    "sass": "^1.82.0",
+    "three": "^0.170.0"
+  }
+}

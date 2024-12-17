@@ -1,0 +1,9 @@
+@use "/src/scss/null";
+@use "/src/scss/variable" as *;
+@use "/src/scss/mixin" as *;
+
+.canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+}

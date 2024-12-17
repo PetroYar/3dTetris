@@ -1,0 +1,18 @@
+
+
+$minWidth: 320;
+
+$maxWidth: 1800;
+
+$maxWidthContainer: 1363;
+
+$containerPadding: 30;
+
+[class*="__container"] {
+  max-width: 1363px;
+  margin: 0 auto;
+  padding-left: 15px;
+  padding-right: 15px;
+  // overflow: visible;
+}
+
