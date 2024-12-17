@@ -12,8 +12,8 @@ export const createPhysicsWorld = () => {
     plastycMaterial,
     concreteMaterial,
     {
-      friction: 0,
-      restitution: 1,
+      friction: 0.1,
+      restitution: 0.1,
     }
   );
 
