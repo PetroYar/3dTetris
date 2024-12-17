@@ -70,7 +70,7 @@ window.addEventListener("touchmove", (e) => {
 
   // Переміщення фігури вліво/вправо
   if (Math.abs(deltaX) > Math.abs(deltaY)) {
-    if (deltaX > 30) {
+    if (deltaX > 50) {
       // Вправо
       lastFigure.position.x += 0.5;
     } else if (deltaX < -30) {
@@ -81,7 +81,7 @@ window.addEventListener("touchmove", (e) => {
 
   // Поворот фігури
   if (Math.abs(deltaY) > Math.abs(deltaX)) {
-    if (deltaY < -30) {
+    if (deltaY < -50) {
       // Вгору (наприклад, для повороту фігури)
       lastFigure.quaternion.z -= 1;
     }
@@ -103,7 +103,7 @@ setInterval(() => {
 //   const physics = addPhysicsToFigure("Z");
 
 // renderer
-const renderer = new THREE.WebGLRenderer({ canvas });
+const renderer = new THREE.WebGLRenderer({ canvas,alpha:true });
 renderer.setSize(window.innerWidth, window.innerHeight);
 renderer.shadowMap.enabled = true;
 
