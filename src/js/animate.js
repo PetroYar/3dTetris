@@ -10,11 +10,14 @@ export const createAnimation = (
 
   world,
   figures,
+  personBody,
+  personGroup,
+  movePerson,
+  updateCamera
 ) => {
   const timeStep = 1 / 60;
 
   const animate = () => {
-    
     requestAnimationFrame(animate);
 
     figures.forEach(({ figure, physics }) => {
@@ -22,11 +25,11 @@ export const createAnimation = (
       figure.position.copy(physics.position);
       figure.quaternion.copy(physics.quaternion);
     });
-    // console.log(physics.position)
+    personGroup.position.copy(personBody.position);
     stats.update();
-   
- 
- world.step(Math.min(timeStep, 0.1));
+    movePerson();
+    
+    world.step(Math.min(timeStep, 0.1));
 
     renderer.render(scene, camera);
   };

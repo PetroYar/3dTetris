@@ -10,5 +10,11 @@ export const createCamera = () => {
   
   camera.position.set(0, 1, 15);
 
+
+
+
+
+
+  
   return camera;
 };

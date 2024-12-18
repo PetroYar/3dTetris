@@ -4,7 +4,7 @@ import { getFigurePosition } from "./figure";
 
 export const createPhysicsWorld = () => {
   const world = new CANNON.World();
-  world.gravity.set(0, -2, 0); // Гравітація
+  world.gravity.set(0, -5, 0); // Гравітація
 
   const concreteMaterial = new CANNON.Material("concrete");
   const plastycMaterial = new CANNON.Material("plastyc");
@@ -12,8 +12,8 @@ export const createPhysicsWorld = () => {
     plastycMaterial,
     concreteMaterial,
     {
-      friction: 0.1,
-      restitution: 0.1,
+      friction: 0.7,
+      restitution: 0.7,
     }
   );
 
@@ -27,9 +27,16 @@ export const createPhysicsWorld = () => {
   groundBody.quaternion.setFromEuler(-Math.PI / 2, 0, 0);
   world.addBody(groundBody);
 
+const personBody = new CANNON.Body({
+  type: CANNON.Body,
+  shape: new CANNON.Box(new CANNON.Vec3(0.5, 1.5, 0.5)),
+  material: concreteMaterial,
+});
+personBody.position.set(0,1.5,0)
+world.addBody(personBody)
   
   const addPhysicsToFigure = (type) => {
-    const size = 0.5;
+    const size = 1;
     const body = new CANNON.Body({ mass: 1,material:plastycMaterial});
     const position = getFigurePosition(type, size);
     position.forEach(([x, y]) => {
@@ -45,5 +52,5 @@ export const createPhysicsWorld = () => {
   };
 
 
-  return { world, addPhysicsToFigure };
+  return { world, addPhysicsToFigure,personBody };
 };

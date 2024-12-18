@@ -11,12 +11,12 @@ const shapeColors = {
   T: new THREE.Color(0x9900cc), // Пурпурний
 };
 export const createFigure = (type) => {
-  const size = 0.5;
+  const size = 1;
   const geometry = new THREE.BoxGeometry(size, size, size);
   const material = new THREE.MeshStandardMaterial({
     color: shapeColors[type],
-    metalness: 0.8, // Висока металевість для блиску
-    roughness: 0.4,
+    metalness: 0.1, // Висока металевість для блиску
+    roughness: 0.1,
   });
 
   const group = new THREE.Group();
@@ -28,7 +28,7 @@ export const createFigure = (type) => {
     const edges = new THREE.EdgesGeometry(geometry);
     const edgeMaterial = new THREE.LineBasicMaterial({
       color: 0x030303, // Колір граней (чорний)
-      linewidth: 3, // Товщина лінії
+      linewidth: 1, // Товщина лінії
     });
     const edgeLines = new THREE.LineSegments(edges, edgeMaterial); // Додаємо краї до куба
     cube.add(edgeLines); // Додаємо краї до кожного куба
