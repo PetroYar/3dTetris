@@ -1,7 +1,7 @@
 import * as THREE from "three";
 import { GLTFLoader } from "three/examples/jsm/Addons.js";
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
-
+import gsap from "gsap";
 import * as dat from "dat.gui";
 
 import { createScene } from "./src/js/scene";
@@ -62,7 +62,7 @@ const test = () => {
 
 setInterval(() => {
   test();
-}, 10000);
+}, 4000);
 
 let keysPressed = {}; // Об'єкт для зберігання стану клавіш
 
@@ -87,6 +87,14 @@ function movePerson() {
   }
   if (keysPressed["d"]) {
     personBody.position.x += 0.1; // Рух вправо
+  }
+  if(keysPressed[' ']){
+    
+    gsap.to(personBody.position,{
+      duration:1,
+      y:4,
+      ease:'power1.out'
+    })
   }
 }
 

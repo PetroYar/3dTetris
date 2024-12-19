@@ -26,6 +26,8 @@ export const createAnimation = (
       figure.quaternion.copy(physics.quaternion);
     });
     personGroup.position.copy(personBody.position);
+      personGroup.quaternion.copy(personBody.quaternion);
+
     stats.update();
     movePerson();
     

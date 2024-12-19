@@ -29,6 +29,7 @@ export const createPhysicsWorld = () => {
 
 const personBody = new CANNON.Body({
   type: CANNON.Body,
+  mass: 3,
   shape: new CANNON.Box(new CANNON.Vec3(0.5, 1.5, 0.5)),
   material: concreteMaterial,
 });
