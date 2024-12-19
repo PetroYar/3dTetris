@@ -29,10 +29,11 @@ export const createPhysicsWorld = () => {
 
 const personBody = new CANNON.Body({
   type: CANNON.Body,
-  mass: 3,
+  mass: 20,
   shape: new CANNON.Box(new CANNON.Vec3(0.5, 1.5, 0.5)),
   material: concreteMaterial,
 });
+personBody.quaternion.setFromEuler(0, Math.PI, 0);
 personBody.position.set(0,1.5,0)
 world.addBody(personBody)
   
